@@ -102,16 +102,16 @@ body{
 .about{
     position: relative;
     background-color: #000000;
-    min-height: 105vh;
+    min-height: 90vh;
     border-bottom: 1px solid rgba(59, 59, 59, 0.856);
     
 
 }
-#dp{
+/* #dp{
     position: absolute;
     border-style: outset;
-    border: 3px solid #fe8e38 ;
-    border-radius: 10px;
+    border: 1px solid #fe8e3800 ;
+    border-radius: 25px;
     width: 600px;
     height: 650px;
     margin: 40px;
@@ -120,59 +120,73 @@ body{
     background-position: cover;
     background-repeat: no-repeat;
 
-}
+} */
 #a{
     position: absolute;
     display: flex;
     color: #fff;
-    top: 70px;
-    right: 705px;
-    font-family: "Bricolage Grotesque";
+    top: 30px;
+    left: 100px;
+    font-family: "Press Start 2P";
+    font-weight: bold;
+    font-size: 30px;
+    transform: scaleX(1.1);
+}
+#code{
+    position: absolute;
+    display: flex;
+    color: #fff;
+    top: 30px;
+    left: 810px;
+    font-family: "Press Start 2P";
     font-weight: 600;
     font-size: 30px;
-    color: #414141;
+    transform: scaleX(1.5);
 }
 #at{
     position: absolute;
     display: flex;
     top: 105px;
-    left: 665px;
-    color: #fff;
+    left: 70px;
+    color: #fe8e38;
     font-family: "Archivo Black";
     font-size: 40px;
 }
 #at2{
     position: absolute;
     display: flex;
-    top: 165px;
-    left: 665px;
-    color: #545454;
+    top: 185px;
+    left: 70px;
+    color: #bcbcbc;
     font-family: "Bricolage Grotesque";
     font-size: 30px;
+    line-height: 1.4;
+    border-left: #fe8e38;
+    width: 50%;
 } 
 #ab{
     position: absolute;
     display: flex;
-    top: 290px;
-    left: 665px;
+    top: 165px;
+    left: 845px;
     border-style: outset;
     border: 3px solid #121212;
     border-radius: 10px;
-    width: 750px;
-    height: 330px;
+    width: 550px;
+    height: 390px;
     background-color: #121212;
 }
 #ab ul{
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 20px;
     list-style-type: none;
     padding: 0px;
     overflow: hidden;
     margin: 0px;
-    color: #545454;
+    color: #bcbcbc;
     font-size: 25px;
-    line-height: 3;
+    line-height: 3.5;
 }
 #name1{
     color: #fe8e38;
@@ -189,8 +203,8 @@ body{
 #c{
     position: absolute;
     display: flex;
-    top: 645px;
-    left: 665px;
+    top: 585px;
+    left: 70px;
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -208,8 +222,8 @@ body{
 #j{
     position: absolute;
     display: flex;
-    top: 645px;
-    left: 745px;
+    top: 585px;
+    left: 150px;
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -227,8 +241,8 @@ body{
 #d{
     position: absolute;
     display: flex;
-    top: 645px;
-    left: 825px;
+    top: 585px;
+    left: 230px;
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -246,8 +260,8 @@ body{
 #hc{
     position: absolute;
     display: flex;
-    top: 645px;
-    left: 905px;
+    top: 585px;
+    left: 310px;
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -261,4 +275,10 @@ body{
     color: #fe8e38;
     font-size: 25px;
     text-align: center;
+}
+.skills{
+    osition: relative;
+    background-color: #000000;
+    min-height: 90vh;
+    border-bottom: 1px solid rgba(59, 59, 59, 0.856);
 }  
