@@ -105,8 +105,8 @@ body{
     background-color: #000000;
     min-height: 90vh;
     border-bottom: 1px solid rgba(59, 59, 59, 0.856);
-    
-
+    padding: 30px 70px 50px;
+    box-sizing: border-box;
 }
 /* #dp{
     position: absolute;
@@ -123,10 +123,7 @@ body{
 
 } */
 #a{
-    position: absolute;
     color: #fff;
-    top: 30px;
-    left: 5rem;
     font-family: "Press Start 2P";
     font-size:clamp(18px,2vw,30px);
     transform: scaleX(1.1);
@@ -141,48 +138,54 @@ body{
     transform: scaleX(1.5);
 }
 #at{
-    position: absolute;
-    display: flex;
-    top: 105px;
-    left: 70px;
     color: #fe8e38;
     font-family: "Archivo Black";
-    font-size: 40px;
+    font-size: clamp(24px, 3vw, 40px);
+    margin-top: 35px;
 }
-#at2{
-    position: absolute;
-    display: flex;
-    top: 185px;
-    left: 70px;
+
+/*
+   Grid replaces fixed top/left coordinates for the readable About content.
+   The first row holds the paragraph and card. The second row puts the
+   language tags below the card, even when the paragraph becomes taller.
+*/
+.about-content{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 550px);
+    grid-template-areas:
+        "paragraph card"
+        ". languages";
+    gap: 30px 55px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.at2{
+    grid-area: paragraph;
     color: #bcbcbc;
     font-family: "Bricolage Grotesque";
-    font-size: 30px;
+    font-size: clamp(20px, 2vw, 30px);
     line-height: 1.4;
-    border-left: #fe8e38;
-    width: 50%;
-} 
+    border-left: 3px solid #fe8e38;
+    padding-left: 15px;
+}
+
 #ab{
-    position: absolute;
-    display: flex;
-    top: 165px;
-    left: 845px;
+    grid-area: card;
     border-style: outset;
     border: 3px solid #121212;
     border-radius: 10px;
-    width: 550px;
-    height: 390px;
+    min-height: 390px;
     background-color: #121212;
+    box-sizing: border-box;
+    padding: 20px;
 }
 #ab ul{
-    position: absolute;
-    top: 20px;
-    left: 20px;
     list-style-type: none;
     padding: 0px;
-    overflow: hidden;
     margin: 0px;
     color: #bcbcbc;
-    font-size: 25px;
+    font-size: clamp(18px, 1.7vw, 25px);
     line-height: 3.5;
 }
 #name1{
@@ -197,11 +200,15 @@ body{
 #learn{
     color: #fe8e38;
 }
-#c{
-    position: absolute;
+/* Grid places this below #ab rather than at a fixed page coordinate. */
+.languages{
+    grid-area: languages;
     display: flex;
-    top: 585px;
-    left: 70px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#c{
+
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -209,18 +216,14 @@ body{
     height: 29px;
 }
 #c1{
-    position: absolute;
-    display: flex;
-    left: 25px;
+    position: relative;
+    left: 1.5rem;
     color: #fe8e38;
     font-size: 25px;
     text-align: center;
 }  
 #j{
-    position: absolute;
-    display: flex;
-    top: 585px;
-    left: 150px;
+
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -228,18 +231,13 @@ body{
     height: 29px;
 }
 #j1{
-    position: absolute;
-    display: flex;
-    left: 8px;
+    position: relative;
+    left: 0.5rem;
     color: #fe8e38;
     font-size: 25px;
     text-align: center;
 }  
 #d{
-    position: absolute;
-    display: flex;
-    top: 585px;
-    left: 230px;
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -247,18 +245,14 @@ body{
     height: 29px;
 }
 #d1{
-    position: absolute;
-    display: flex;
-    left: 11px;
+    position: relative;
+    left: 0.7rem;
     color: #fe8e38;
     font-size: 25px;
     text-align: center;
 }  
 #hc{
-    position: absolute;
-    display: flex;
-    top: 585px;
-    left: 310px;
+
     border-style: outset;
     border: 2px solid #fe8e38;
     border-radius: 10px;
@@ -266,12 +260,50 @@ body{
     height: 29px;
 }
 #hc1{
-    position: absolute;
-    display: flex;
-    left: 5px;
+    position: relative;
+    left: 0.3rem;
     color: #fe8e38;
     font-size: 25px;
     text-align: center;
+}
+
+/*
+   At this width, two columns would make both the paragraph and card too
+   narrow. Stacking them keeps every item readable and prevents overlap.
+*/
+@media (max-width: 900px){
+    .about{
+        padding: 30px 30px 50px;
+    }
+
+    .about-content{
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "paragraph"
+            "card"
+            "languages";
+        gap: 25px;
+    }
+
+    #ab{
+        min-height: 0;
+    }
+}
+
+@media (max-width: 500px){
+    .about{
+        padding-inline: 20px;
+    }
+
+    #a{
+        line-height: 1.5;
+    }
+
+    #ab ul{
+        font-size: 17px;
+        line-height: 2;
+        overflow-wrap: anywhere;
+    }
 }
 .skills{
     position: relative;

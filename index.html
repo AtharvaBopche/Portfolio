@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-16">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bitcount+Grid+Double:wght@100..900&family=Black+Ops+One&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Oswald:wght@200..700&family=Press+Start+2P&display=swap" rel="stylesheet">    
-    <body>
+</head>
+<body>
     <!-- navbar -->
      <nav class="navbar">
         <div id="title">ATHARV@B</div>
@@ -29,8 +30,11 @@
     <section class="about" id="about">
         <div id="dp"></div>
         <div id="a">The Person Behind The <span>CODE</span></div>
-        <div id="at">Building things, One bug at a time.</div>    
-        <div id="at2">[ I'm a second-year engineering student who loves turning  ideas into reality through code. My interests lie in software development, web technologies, and problem solving. I enjoy building projects that challenge me to learn something new, whether it's mastering a programming language, exploring modern frameworks, or improving the user experience. With every project, I aim to write better code, think more creatively and grow into a skilled software developer. ]</div>    
+        <div id="at">Building things, One bug at a time.</div>
+
+        <!-- Grid keeps reading content in normal flow as its height changes. -->
+        <div class="about-content">
+        <div class="at2">[ I'm a second-year engineering student who loves turning  ideas into reality through code. My interests lie in software development, web technologies, and problem solving. I enjoy building projects that challenge me to learn something new, whether it's mastering a programming language, exploring modern frameworks, or improving the user experience. With every project, I aim to write better code, think more creatively and grow into a skilled software developer. ]</div>
         <div id="ab"><ul>
             <li>name: <span id="name1">"Atharva Sachin Bopche"</span></li>
             <li>role: <span id="role">"Student & Developer"</span></li>
@@ -38,10 +42,14 @@
             <li>learning: <span id="learn">"C, DSA, JAVA, PYTHON, WEB DEV"</span></li>
             </ul>
         </div>
+        <!-- This is deliberately not .at2: language tags are not paragraph text. -->
+        <div class="languages" id="languages">
         <div id="c"><span id="c1">C</span></div>
         <div id="j"><span id="j1">JAVA</span></div>
         <div id="d"><span id="d1">DSA</span></div>
         <div id="hc"><span id="hc1">HTML/CSS</span></div>
+        </div>
+        </div>
     </section>
     <section class="skills" id="skills">
 
